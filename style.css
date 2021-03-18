@@ -5,12 +5,12 @@ Til þess að læra að gera eitthvað, prófaðu að leita á google af því s
 
 body {
   background-color: #FFFFFF;
-  color: #FFFFAA;
+  color: #FFFFFF;
 }
 
 h1 {
   color: #000000;
-  background-color: #f44336;
+  background-color: #FFFFFF;
   font-family: Helvetica, sans-serif;
   font-style: bold;
 }
@@ -27,7 +27,7 @@ a {
 }
 
 a:hover {
-  color: #FFFFFF;
+  color: #000000;
   font-size: 20px;
 }
 
