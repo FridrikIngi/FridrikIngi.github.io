@@ -21,4 +21,4 @@ function setup(){
     text("Halló heimur",200,40);
 }
 rect(200,200,10)
-ellise(100,200,50,50); 
+ellipse(100,200,50,50); 
