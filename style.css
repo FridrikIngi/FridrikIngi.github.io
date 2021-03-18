@@ -4,7 +4,7 @@ Til þess að læra að gera eitthvað, prófaðu að leita á google af því s
 "how to change link color." */
 
 body {
-  background-color: #f44336;
+  background-color: #FFFFFF;
   color: #FFFFAA;
 }
 
@@ -23,14 +23,14 @@ h2 {
 }
 
 a {
-  color: #000000;
+  color: #4169E1;
 }
 
 a:hover {
-  color: #f44336;
+  color: #FFFFFF;
   font-size: 20px;
 }
 
 ul {
-  background-color: #000000;
+  background-color: #FFFFFF;
 }
