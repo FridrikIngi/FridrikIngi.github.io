@@ -16,5 +16,7 @@ function setup(){
     ellipse(100,200,50,50);
     fill(255)
     rect(50,50,25,25);
+    textSize(20)
+    text("Ég er flott verkefni",100,-40);
 
 }
