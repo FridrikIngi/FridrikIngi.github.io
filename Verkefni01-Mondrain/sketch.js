@@ -3,22 +3,27 @@
 
 
 function setup(){
-    createCanvas(300,300);
-    background(135,206,250);
-    fill(150);
-    ellipse(100,100,50,50);
+    createCanvas(640,640);
+    background(255);
+    fill(234,235,230);
+    noStroke();
+    rect(20,355,255,265);
+    rect(285,355,281,235);
+    rect(575,475,45,145);
+    rect(285,23,335,325);
+    fill(196,50,37);
+    rect(20,23,255,325);
+    fill(32,72,144);
+    rect(575,355,45,100);
+    fill(247,212,60);
+    rect(285,600,152,20);
+    fill(38,37,40);
+    rect(445,600,122,20);
     fill(0);
-    textSize(20);
-    text("Halló heimur",100,40);
-    fill(0);
-    textSize(20)
-    text("Ég er flott verkefni",50,260);
-    fill(255,69,0)
-    rect(200,200,10,10);
-    fill(139,0,139)
-    ellipse(100,200,50,50);
-    fill(255)
-    rect(50,50,25,25);
-
-
+    rect(275,23,10,597);
+    rect(20,345,600,10);
+    rect(566,353,10,267);
+    rect(575,454,45,20);
+    rect(285,590,285,10);
+    rect(437,600,10,20);
 }
