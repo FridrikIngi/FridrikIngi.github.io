@@ -18,7 +18,7 @@ function setup() {
 }
 
 function draw() {
-  background(255,200,0);
+  background(176,224,230);
 	// Reikna ný hnit út frá hraða boltans:
   boltiX = boltiX + hradiX;
   boltiY = boltiY + hradiY;
@@ -26,7 +26,8 @@ function draw() {
   if ((boltiX > width-boltiStaerd/2))  {
     hradiX = hradiX * -1;
   }
-  if ((boltiX < width-boltiStaerd/2))  {
+	//F ef boltinn snertir vinstri vegginn
+  if ((boltiX < 0-boltiStaerd/2))  {
     hradiX = hradiX * -1;
   }
 
@@ -35,23 +36,33 @@ function draw() {
     hradiY = hradiY * -1;
   }
 
-  if ((boltiX + boltiStaerd/2 > mouseX - spadiBreidd/2)) {
-    hradiY = hradiY * -1;
-  }
-  if ((boltiX + boltiStaerd/2 < mouseX + spadiBreidd/2)) {
-    hradiY = hradiY * -1;
-  }
+	// F bolti snertir botnin
 
+
+
+	if(abs(spadiY - boltiY) < boltiStaerd/2 + spadiThykkt/2 && abs(mouseX - boltiX) < boltiStaerd/2 + spadiBreidd/2){
+		hradiY = hradiY * -1;
+		stig = stig + 1
+}
 
 	// Teikna boltann
-  fill(236,36,94);
-  rect(boltiX, boltiY, boltiStaerd, boltiStaerd);
+  fill(255,105,180);
+  ellipse(boltiX, boltiY, boltiStaerd, boltiStaerd);
 	// Teikna spaðann
-  fill(3,123,227);
+  fill(240,230,140);
   rect(mouseX,spadiY ,spadiBreidd,spadiThykkt);
   fill (0);
   ellipse(mouseX, spadiY, 10,10);
 	// Teikna stigin
   fill(0);
   text("Stig: " + stig,10,20);
+	fill(0)
+	text("r = restart",270,20)
+}
+function keyPressed(){
+	if (keyCode == 82 ){
+		boltiX = 100;
+		boltiY = 100;
+		stig = stig * 0;
+	}
 }
