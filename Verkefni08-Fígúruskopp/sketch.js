@@ -1,65 +1,39 @@
+var bukur = 100
+var loftnet = 100
+var hendur = 70
+var fætur = 100
+var h = 0
+var s = 360
+var b = 360
 
-var boltiX = 100;
-var boltiY = 100;
-var hradiX = 5;
-var hradiY = -6;
-var boltiStaerd = 20;
-var stig = 0;
-var spadiBreidd = 150;
-var spadiThykkt = 25;
-var spadiY;
-
-function setup() {
-	createCanvas(400,500);
-	spadiY = height - 45;
-	rectMode(CENTER);
-	textFont("Courier New",16);
-	textStyle(BOLD);
+function setup(){
+	createCanvas(600,600)
+	colorMode(HSB)
+	background(180,100,100)
+	rectMode(CENTER)
 }
 
-function draw() {
-  background(176,224,230);
-	// Reikna ný hnit út frá hraða boltans:
-  boltiX = boltiX + hradiX;
-  boltiY = boltiY + hradiY;
-	// Athuga hvort boltinn snertir vegginn hægra megin:
-  if ((boltiX > width-boltiStaerd/2))  {
-    hradiX = hradiX * -1;
-  }
-	//F ef boltinn snertir vinstri vegginn
-  if ((boltiX < 0-boltiStaerd/2))  {
-    hradiX = hradiX * -1;
-  }
-
-  	// Athuga hvort boltinn snertir þakið
-  if ((boltiY < boltiStaerd)) {
-    hradiY = hradiY * -1;
-  }
-
-
-	if(abs(spadiY - boltiY) < boltiStaerd/2 + spadiThykkt/2 && abs(mouseX - boltiX) < boltiStaerd/2 + spadiBreidd/2){
-		hradiY = hradiY * -1;
-		stig = stig + 1
+function mousePressed(){
+	//teikna robot á x og y gildi en hafa random hæð og breidd miðað við búkinn
+	robot(mouseX,mouseY,random(50,150))
+	h = random(0,360)
 }
 
-	// Teikna boltann
-  fill(255,105,180);
-  ellipse(boltiX, boltiY, boltiStaerd, boltiStaerd);
-	// Teikna spaðann
-  fill(240,230,140);
-  rect(mouseX,spadiY ,spadiBreidd,spadiThykkt);
-  fill (0);
-  ellipse(mouseX, spadiY, 10,10);
-	// Teikna stigin
-  fill(0);
-  text("Stig: " + stig,10,20);
-	fill(0)
-	text("r = restart",270,20)
-}
-function keyPressed(){
-	if (keyCode == 82 ){
-		boltiX = 100;
-		boltiY = 100;
-		stig = stig * 0;
-	}
+function robot(mouseX,mouseY,bukur){
+	fill(0,0,75);
+	rect(mouseX,mouseY,100,bukur);
+	rect(mouseX,mouseY - bukur/1.3,80,60); //haus 1,3
+
+	fill(h,s,b);
+	rect(mouseX - 25,mouseY - bukur/1.2,20,20);
+	rect(mouseX + 25,mouseY - bukur/1.2,20,20);
+
+	fill(0);
+	line(mouseX - 40,mouseY - bukur,mouseX - 40,mouseY - loftnet - 30); //loftnet
+	fill(0,0,75);
+	rect(mouseX - 20,mouseY + bukur/2 + 30,fætur/5,60); //fætur
+	rect(mouseX + 20,mouseY + bukur/2 + 30,fætur/5,60); //fætur
+	//hendur
+	rect(mouseX - 50 - hendur/2,mouseY - bukur/4,hendur,15); //bukur
+	rect(mouseX + 50 + hendur/2,mouseY - bukur/4,hendur,15); //bukur
 }
