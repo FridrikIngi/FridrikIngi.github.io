@@ -26,7 +26,7 @@ function robot(mouseX,mouseY,bukur){
 
 	fill(h,s,b);
 	rect(mouseX - 25,mouseY - bukur/1.2,20,20);
-	rect(mouseX + 25,mouseY - bukur/1.2,20,20);
+	rect(mouseX + 25,mouseY - bukur/1.2,20,20)
 
 	fill(0);
 	line(mouseX - 40,mouseY - bukur,mouseX - 40,mouseY - loftnet - 30); //loftnet
